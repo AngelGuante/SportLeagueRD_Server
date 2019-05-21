@@ -6,7 +6,7 @@ public class Gson_Convert {
     private String Nombre;
     private String Descripcion;
 
-    public Gson_Convert(int Id, String Nombre, String Descripcion) {
+    private Gson_Convert(int Id, String Nombre, String Descripcion) {
         this.Id = Id;
         this.Nombre = Nombre;
         this.Descripcion = Descripcion;

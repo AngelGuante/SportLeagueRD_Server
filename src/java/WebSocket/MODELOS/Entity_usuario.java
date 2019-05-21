@@ -4,6 +4,7 @@ public class Entity_usuario {
     public String ID;
     public String Nombre;
     public String Correo;
+    public String EquiposSeguidosID;
     public String EquipoFavorito_id;
     public String JugadorFavorito_id;
     public String JugadorFavorito_EquipoId;
@@ -21,7 +22,7 @@ public class Entity_usuario {
     }
     
     public Entity_usuario(String ID, String Nombre, String Correo,
-            String EquipoFavorito_id, String JugadorFavorito_id,
+            String EquipoFavorito_id, String EquiposSeguidosID, String JugadorFavorito_id,
             String JugadorFavorito_EquipoId, String BaseFavorito_id,
             String BaseFavorito_EquipoId, String AleroFavorito_id,
             String AleroFavorito_EquipoId, String PivotFavorito_id,
@@ -30,6 +31,7 @@ public class Entity_usuario {
         this.ID = ID;
         this.Nombre = Nombre;
         this.Correo = Correo;
+        this.EquiposSeguidosID = EquiposSeguidosID;
         this.EquipoFavorito_id = EquipoFavorito_id;
         this.JugadorFavorito_id = JugadorFavorito_id;
         this.JugadorFavorito_EquipoId = JugadorFavorito_EquipoId;

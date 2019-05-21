@@ -60,6 +60,7 @@ public class WsServer {
             //  -JB..   -> JUGADORES BUSCADOS POR SU NOMBRE
             //  -VT..   -> VOTACIONES
             //  -US..   -> USUARIO
+            //  -SG..   -> SEGUIMIENTO DE EQUIPO POR USUARIO
             case "NO01":
                 noticias.clear();
                 for (int i = Integer.parseInt((String) messageRecived[2]);
@@ -133,6 +134,11 @@ public class WsServer {
                             ("NOMBRE EQUIPO " + Integer.toString(i)),
                             "STSV", null, null, null, null, null));
                 }
+//                for (int i = 0; i < 20; i++) {
+//                    equipos.add(new model_equipos(Integer.toString(i), "team8.png",
+//                            ("NOMBRE EQUIPO " + Integer.toString(i)),
+//                            "STSV", null, null, null, null, null));
+//                }
                 equipos.add(new model_equipos("EQ01"));
                 return new Gson().toJson(equipos);
             case "EQ02":
@@ -707,13 +713,25 @@ public class WsServer {
                     _correo
                  */
                 usuarios.add(new Entity_usuario(null, ((String)messageRecived[2]),
-                        ((String)messageRecived[1]), null, null, null, null,
+                        ((String)messageRecived[1]), null, null, null, null, null,
                         null, null, null, null, null, null, null)
                 );
                 usuarios.add(new Entity_usuario("US01"));
                 return new Gson().toJson(usuarios);
 
             //******************************************************************************
+            case "SG01":
+                usuarios.clear();
+                /*
+                    _EquiposSeguidosID
+                 */
+                usuarios.add(new Entity_usuario(null, null, null,
+                        ((String)messageRecived[1]),  null, null, null, null,
+                        null, null, null, null, null, null, null)
+                );
+                usuarios.add(new Entity_usuario("US01"));
+                return new Gson().toJson(usuarios);
+
         }
 
         return null;
